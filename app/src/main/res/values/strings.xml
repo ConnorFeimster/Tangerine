@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Tangerine</string>
+    <string name="title">Tangerine</string>
+    <string name="radius">Radius :</string>
 
     <string-array name="radius">
         <item>10</item>

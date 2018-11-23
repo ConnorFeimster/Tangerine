@@ -1,5 +1,6 @@
 package com.example.cfeim.tangerine;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -44,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 else if (TextUtils.isEmpty(string_zipcode))
                 {
                     Toast.makeText(MainActivity.this, "You must enter a zipcode.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    startActivity(new Intent(MainActivity.this, SecondActivity.class));
                 }
             }
         });
