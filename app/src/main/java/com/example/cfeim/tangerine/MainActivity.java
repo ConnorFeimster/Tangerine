@@ -46,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, "You must enter a zipcode.", Toast.LENGTH_SHORT).show();
                 }
+                else if (string_zipcode.length() > 5)
+                {
+                    Toast.makeText(MainActivity.this, "The zipcode you entered is too long.", Toast.LENGTH_SHORT).show();
+                }
+                else if (string_zipcode.length() < 5)
+                {
+                    Toast.makeText(MainActivity.this, "The zipcode you entered is too short.", Toast.LENGTH_SHORT).show();
+                }
                 else
                 {
                     startActivity(new Intent(MainActivity.this, SecondActivity.class));
