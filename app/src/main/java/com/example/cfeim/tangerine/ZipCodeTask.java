@@ -3,7 +3,7 @@ package com.example.cfeim.tangerine;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.apache.commons.io.IOUtils;
+//import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -29,21 +29,21 @@ public class ZipCodeTask extends AsyncTask<String, Void, ArrayList<String>> {
             connection.connect();
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK)
             {
-                String json = IOUtils.toString(connection.getInputStream(), "UTF8");
-
-                JSONObject root = new JSONObject(json);
-                JSONArray zips = root.optJSONArray("zip_codes");
-                JSONObject group;
-                String city = "";
-
-                for (int i = 0; i < zips.length(); i++)
-                {
-                    group = zips.getJSONObject(i).optJSONObject("city");
-                    Log.d("zip", "group : " + group);
-                    city = zips.getJSONObject(i).getString("city");
-                    Log.d("zip", "city : " + city);
-                    arrayList.add(city);
-                }
+//                String json = IOUtils.toString(connection.getInputStream(), "UTF8");
+//
+//                JSONObject root = new JSONObject(json);
+//                JSONArray zips = root.optJSONArray("zip_codes");
+//                JSONObject group;
+//                String city = "";
+//
+//                for (int i = 0; i < zips.length(); i++)
+//                {
+//                    group = zips.getJSONObject(i).optJSONObject("city");
+//                    Log.d("zip", "group : " + group);
+//                    city = zips.getJSONObject(i).getString("city");
+//                    Log.d("zip", "city : " + city);
+//                    arrayList.add(city);
+//                }
             }
         } catch(Exception e)
         {
