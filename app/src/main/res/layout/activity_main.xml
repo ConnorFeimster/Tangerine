@@ -16,49 +16,39 @@
         android:layout_marginTop="140dp"
         android:hint="Enter the item you want to search for here" />
 
-    <EditText
-        android:id="@+id/edit_zipcode"
-        android:layout_width="90dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edit_Item"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="30dp"
-        android:hint="ZipCode"
-        />
-
     <TextView
-        android:id="@+id/textView_radius"
+        android:id="@+id/static_text_City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_Item"
-        android:layout_marginTop="30dp"
-        android:layout_toLeftOf="@id/spinner_radius"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/city"
         android:textSize="18dp"
-        android:text="@string/radius"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/spinner_radius"
-        android:layout_width="100dp"
+        android:id="@+id/spinner_City"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_Item"
         android:layout_marginLeft="0dp"
-        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="20dp"
-        />
+        android:layout_toRightOf="@id/static_text_City"
+        android:entries="@array/ncCities" />
 
     <Button
         android:id="@+id/button_go"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/edit_zipcode"
-        android:layout_marginTop="50dp"
+        android:layout_below="@id/edit_Item"
+        android:layout_toRightOf="@id/spinner_City"
+        android:layout_marginTop="20dp"
         android:text="Go!"
         />
 
