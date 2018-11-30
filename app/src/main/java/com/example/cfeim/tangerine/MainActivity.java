@@ -54,15 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (TextUtils.isEmpty(string_zipcode))
                 {
-                    Toast.makeText(MainActivity.this, "You must enter a zipcode.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "You must enter a ZipCode.", Toast.LENGTH_SHORT).show();
                 }
                 else if (string_zipcode.length() > 5)
                 {
-                    Toast.makeText(MainActivity.this, "The zipcode you entered is too long.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "The ZipCode you entered is too long.", Toast.LENGTH_SHORT).show();
                 }
                 else if (string_zipcode.length() < 5)
                 {
-                    Toast.makeText(MainActivity.this, "The zipcode you entered is too short.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "The ZipCode you entered is too short.", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
