@@ -33,14 +33,6 @@ public class MainActivity extends AppCompatActivity {
         spinner_City = findViewById(R.id.spinner_City);
         button_go = findViewById(R.id.button_go);
 
-//        String[] strArr = getResources().getStringArray(R.array.radius);
-//        Integer[] intArr = new Integer[strArr.length];
-//        for (int i = 0; i < intArr.length; i++){
-//            intArr[i] = Integer.parseInt(strArr[i]);
-//        }
-//        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, intArr);
-//        spinner_City.setAdapter(adapter);
-
         button_go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
