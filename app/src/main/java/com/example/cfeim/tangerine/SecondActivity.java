@@ -55,13 +55,14 @@ public class SecondActivity extends AppCompatActivity {
         {
             String url = urlPrefix + city + craigslistURL + item;
             Log.d("a2", "URL : " + url);
-            craigslistItems = new CraigsListTask().execute(url).get(5000, TimeUnit.MILLISECONDS);
+            craigslistItems = new CraigsListTask().execute(url, item).get(5000, TimeUnit.MILLISECONDS);
         } catch (java.lang.InterruptedException | java.util.concurrent.ExecutionException | java.util.concurrent.TimeoutException e)
         {
             Log.d("e", "A2 error making call to CL : " + e.toString());
         }
 
         Log.d("a2", "craigslistItems : " + craigslistItems.toString());
+        Log.d("a2", "craigslistItems length : " + craigslistItems.size());
 
     }
 }

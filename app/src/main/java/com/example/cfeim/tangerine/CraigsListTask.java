@@ -3,27 +3,18 @@ package com.example.cfeim.tangerine;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.apache.commons.io.IOUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 public class CraigsListTask extends AsyncTask<String, Void, ArrayList<CraigslistItem>> {
 
@@ -36,6 +27,7 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
         String money = "&#x0024;";
         String title;
         String[] split;
+        String searchTerm;
 
         String itemTitle;
         String itemURL;
@@ -58,6 +50,8 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
         try
         {
             URL url = new URL(params[0]);
+            searchTerm = params[1];
+            Log.d("p", searchTerm);
             connection = (HttpURLConnection) url.openConnection();
             connection.connect();
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK)
@@ -71,42 +65,45 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
 
                 Log.d("list", "NodeList length : " + nodeList.getLength());
 
-                node = nodeList.item(0);
-                element1 = (Element) node;
+                for (int i = 0; i < nodeList.getLength(); i++)
+                {
+                    node = nodeList.item(i);
+                    element1 = (Element) node;
 
-                titleList = element1.getElementsByTagName("title");
-                titleElement = (Element) titleList.item(0);
-                titleList = titleElement.getChildNodes();
-                title = titleList.item(0).getNodeValue();
+                    titleList = element1.getElementsByTagName("title");
+                    titleElement = (Element) titleList.item(0);
+                    titleList = titleElement.getChildNodes();
+                    title = titleList.item(0).getNodeValue();
 
-                urlList = element1.getElementsByTagName("link");
-                urlElement = (Element) urlList.item(0);
-                urlList = urlElement.getChildNodes();
-                itemURL = urlList.item(0).getNodeValue();
+                    urlList = element1.getElementsByTagName("link");
+                    urlElement = (Element) urlList.item(0);
+                    urlList = urlElement.getChildNodes();
+                    itemURL = urlList.item(0).getNodeValue();
 
-                descList = element1.getElementsByTagName("description");
-                descElement = (Element) descList.item(0);
-                descList = descElement.getChildNodes();
-                itemDesc = descList.item(0).getNodeValue();
+                    descList = element1.getElementsByTagName("description");
+                    descElement = (Element) descList.item(0);
+                    descList = descElement.getChildNodes();
+                    itemDesc = descList.item(0).getNodeValue();
 
-//                imageList = element1.getElementsByTagName("enc:enclosure");
-//                Log.d("im", "imageList before : " + imageList);
-//                imageElement = (Element) imageList.item(0);
-//                Log.d("im", "element : " + imageElement);
-//                imageList = imageElement.getChildNodes();
-//                Log.d("im", "imageList after : " + imageList);
-//                itemImage = imageList.item(0).getNodeValue();
-//                Log.d("im", "itemImage : " + itemImage);
+                    imageList = element1.getElementsByTagName("enc:enclosure");
+                    imageElement = (Element) imageList.item(0);
+                    itemImage = imageElement.getAttribute("resource");
 
-                split = title.split(money);
-                itemTitle = split[0];
-                itemPrice = Integer.parseInt(split[1]);
+                    split = title.split(money);
+                    itemTitle = split[0];
+                    itemPrice = Integer.parseInt(split[1]);
 
-                Log.d("i", "title : " + itemTitle);
-                Log.d("i", "url : " + itemURL);
-                Log.d("i", "desc : " + itemDesc);
-                Log.d("i", "price : " + itemPrice);
-                //Log.d("i", "image : " + itemImage);
+//                    Log.d("i", "title : " + itemTitle);
+//                    Log.d("i", "url : " + itemURL);
+//                    Log.d("i", "desc : " + itemDesc);
+//                    Log.d("i", "price : " + itemPrice);
+//                    Log.d("i", "image : " + itemImage);
+
+                    itemHide = (!title.toLowerCase().contains(searchTerm.toLowerCase()));
+//                    Log.d("i", "hide : " + String.valueOf(itemHide));
+                    CraigslistItem cl = new CraigslistItem(itemTitle, itemURL, itemPrice, itemDesc, itemImage, itemHide);
+                    result.add(cl);
+                }
             }
             else
             {
@@ -114,7 +111,7 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
             }
         } catch (Exception e)
         {
-            Log.d("cr", "Error : " + e.toString());
+            Log.d("e", "Error : " + e.toString());
         }
 
         return result;
@@ -122,6 +119,6 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
 
     @Override
     protected void onPostExecute(ArrayList<CraigslistItem> result) {
-        //do something
+        //return result;
     }
 }

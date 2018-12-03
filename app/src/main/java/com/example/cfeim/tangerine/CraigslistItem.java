@@ -9,7 +9,7 @@ public class CraigslistItem {
     private int Price;
     private String Desc;
     private boolean Hide;
-    private Bitmap thumbnail;
+    private String Thumbnail;
 
     public String getUrl() {
         return Url;
@@ -51,12 +51,12 @@ public class CraigslistItem {
         return Hide;
     }
 
-    public void setThumbnail(Bitmap image){
-        thumbnail = image;
+    public void setThumbnail(String image){
+        Thumbnail = image;
     }
 
-    public Bitmap getThumbnail (){
-        return thumbnail;
+    public String getThumbnail (){
+        return Thumbnail;
     }
 
     public CraigslistItem(){
@@ -67,11 +67,12 @@ public class CraigslistItem {
         Hide = false;
     }
 
-    public CraigslistItem(String TITLE, String URL, int PRICE, String DESC, boolean HIDE){
+    public CraigslistItem(String TITLE, String URL, int PRICE, String DESC, String THUMB, boolean HIDE){
         Title = TITLE;
         Url = URL;
         Price = PRICE;
         Desc = DESC;
+        Thumbnail = THUMB;
         Hide = HIDE;
     }
 
