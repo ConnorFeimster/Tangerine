@@ -1,5 +1,7 @@
 package com.example.cfeim.tangerine;
 
+import android.graphics.Bitmap;
+
 public class CraigslistItem {
 
     private String Url;
@@ -7,6 +9,7 @@ public class CraigslistItem {
     private int Price;
     private String Desc;
     private boolean Hide;
+    private Bitmap thumbnail;
 
     public String getUrl() {
         return Url;
@@ -46,6 +49,14 @@ public class CraigslistItem {
 
     public boolean getHide(){
         return Hide;
+    }
+
+    public void setThumbnail(Bitmap image){
+        thumbnail = image;
+    }
+
+    public Bitmap getThumbnail (){
+        return thumbnail;
     }
 
     public CraigslistItem(){

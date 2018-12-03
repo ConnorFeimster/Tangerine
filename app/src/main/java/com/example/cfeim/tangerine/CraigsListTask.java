@@ -42,6 +42,7 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
         String itemDesc;
         int itemPrice;
         boolean itemHide;
+        String itemImage;
 
         Node node;
         Element element1;
@@ -51,6 +52,8 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
         Element urlElement;
         NodeList descList;
         Element descElement;
+        NodeList imageList;
+        Element imageElement;
 
         try
         {
@@ -86,15 +89,24 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
                 descList = descElement.getChildNodes();
                 itemDesc = descList.item(0).getNodeValue();
 
+//                imageList = element1.getElementsByTagName("enc:enclosure");
+//                Log.d("im", "imageList before : " + imageList);
+//                imageElement = (Element) imageList.item(0);
+//                Log.d("im", "element : " + imageElement);
+//                imageList = imageElement.getChildNodes();
+//                Log.d("im", "imageList after : " + imageList);
+//                itemImage = imageList.item(0).getNodeValue();
+//                Log.d("im", "itemImage : " + itemImage);
+
                 split = title.split(money);
                 itemTitle = split[0];
                 itemPrice = Integer.parseInt(split[1]);
-
 
                 Log.d("i", "title : " + itemTitle);
                 Log.d("i", "url : " + itemURL);
                 Log.d("i", "desc : " + itemDesc);
                 Log.d("i", "price : " + itemPrice);
+                //Log.d("i", "image : " + itemImage);
             }
             else
             {
