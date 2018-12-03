@@ -12,20 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="140dp"
-        android:hint="Enter the item you want to search for here" />
+        android:layout_marginRight="30dp"
+        android:hint="@string/Item_Hint"
+        android:inputType="text" />
 
     <TextView
         android:id="@+id/static_text_City"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_Item"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:text="@string/city"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <Spinner
@@ -33,24 +34,23 @@
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_Item"
-        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_toRightOf="@id/static_text_City"
+        android:layout_marginEnd="30dp"
+        android:layout_toEndOf="@id/static_text_City"
         android:entries="@array/ncCities" />
 
     <Button
         android:id="@+id/button_go"
         android:layout_width="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/edit_Item"
-        android:layout_toRightOf="@id/spinner_City"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:text="Go!"
-        />
+        android:layout_marginRight="30dp"
+        android:layout_toEndOf="@id/spinner_City"
+        android:text="@string/Button_Go" />
 
     <ImageView
         android:id="@+id/imageView_tang1"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         app:srcCompat="@mipmap/tang_1_fore" />
 
@@ -68,8 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp"
-        android:layout_toRightOf="@id/imageView_tang1"
-        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@id/imageView_tang1"
+        android:layout_marginStart="10dp"
         android:textSize="36sp"
         android:text="@string/title"
         android:textStyle="bold|italic"

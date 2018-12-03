@@ -3,6 +3,11 @@
     <string name="title">Tangerine</string>
     <string name="radius">Radius :</string>
     <string name="city">City :</string>
+    <string name="Empty" />
+    <string name="Item_Hint">Enter the item you want to search for here</string>
+    <string name="Button_Go">GO!</string>
+    <string name="Avg_Price">Avg Price :</string>
+    <string name="checkBox_Include">Title Only</string>
 
     <string-array name="ncCities">
         <item>Asheville</item>

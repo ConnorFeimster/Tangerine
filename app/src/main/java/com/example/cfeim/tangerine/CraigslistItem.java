@@ -4,7 +4,6 @@ public class CraigslistItem {
 
     private String Url;
     private String Title;
-    private String City;
     private int Price;
     private String Desc;
     private boolean Hide;
@@ -23,14 +22,6 @@ public class CraigslistItem {
 
     public void setTitle(String title) {
         Title = title;
-    }
-
-    public String getCity() {
-        return City;
-    }
-
-    public void setCity(String city) {
-        City = city;
     }
 
     public int getPrice() {
@@ -60,10 +51,17 @@ public class CraigslistItem {
     public CraigslistItem(){
         Url = "";
         Title = "";
-        City = "";
         Price = 0;
         Desc = "";
         Hide = false;
+    }
+
+    public CraigslistItem(String TITLE, String URL, int PRICE, String DESC, boolean HIDE){
+        Title = TITLE;
+        Url = URL;
+        Price = PRICE;
+        Desc = DESC;
+        Hide = HIDE;
     }
 
 }

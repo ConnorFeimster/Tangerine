@@ -1,8 +1,10 @@
 package com.example.cfeim.tangerine;
 
+import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONObject;
 
@@ -17,6 +19,8 @@ public class SecondActivity extends AppCompatActivity {
 
     private String item;
     private String city;
+    
+    private TextView itemName;
 
     public  ArrayList<CraigslistItem> craigslistItems;
 
@@ -26,12 +30,16 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         craigslistItems = new ArrayList<>();
+        
+        itemName = findViewById(R.id.textView_Item);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null)
         {
             item = extras.getString("item_search");
             city = extras.getString("item_city");
+            
+            itemName.setText("\"" + item + "\"");
 
             Log.d("a2", "item : " + item);
             Log.d("a2", "city : " + city);
