@@ -14,6 +14,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
         android:text="@string/Empty" />
 
     <TextView
@@ -23,6 +25,8 @@
         android:layout_below="@id/textView_Item"
         android:layout_marginStart="30dp"
         android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
         android:text="@string/Avg_Price" />
 
     <CheckBox
@@ -43,6 +47,8 @@
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@id/textView_avgPrice_Static"
         android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
         android:text="@string/Empty" />
 
     <ListView android:id="@android:id/list"
