@@ -8,6 +8,7 @@
     <string name="Button_Go">GO!</string>
     <string name="Avg_Price">Avg Price :</string>
     <string name="checkBox_Include">Title Only</string>
+    <string name="results">Results :</string>
 
     <string-array name="ncCities">
         <item>Asheville</item>

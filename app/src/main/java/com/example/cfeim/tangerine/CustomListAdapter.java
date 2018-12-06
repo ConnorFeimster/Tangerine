@@ -10,15 +10,17 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class CustomListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
-    private final String itemname;
-    private final String itemprice;
-    private final Bitmap img;
+    private final String[] itemname;
+    private final String[] itemprice;
+    private final String[] img;
 
-    public CustomListAdapter(Activity context, String itemname, String itemprice, Bitmap image) {
-        super(context, R.layout.listview_with_images);
+    public CustomListAdapter(Activity context, String[] itemname, String[] itemprice, String[] image) {
+        super(context, R.layout.listview_with_images, itemname);
         // TODO Auto-generated constructor stub
 
         this.context = context;
@@ -31,14 +33,16 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView = inflater.inflate(R.layout.listview_with_images, null,true);
 
+        Picasso.Builder builder = new Picasso.Builder(context);
+
         TextView txtTitle = rowView.findViewById(R.id.item);
         ImageView imageView = rowView.findViewById(R.id.icon);
         TextView extratxt = rowView.findViewById(R.id.textView1);
 
-        txtTitle.setText(itemname);
-        imageView.setImageBitmap(img);
-        extratxt.setText(itemprice);
-        return rowView;
+        builder.build().load(img[position]).into(imageView);
+        txtTitle.setText(itemname[position]);
+        extratxt.setText(itemprice[position]);
 
+        return rowView;
     }
 }

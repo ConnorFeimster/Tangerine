@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,9 +21,11 @@ public class MainActivity extends AppCompatActivity {
     public TextView edit_item;
     public Spinner spinner_City;
     public Button button_go;
+    public CheckBox check_Title;
 
     private static String string_item = "";
     private static String string_City = "";
+    private static boolean title_Checked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         edit_item = findViewById(R.id.edit_Item);
         spinner_City = findViewById(R.id.spinner_City);
         button_go = findViewById(R.id.button_go);
+        check_Title = findViewById(R.id.checkBox_Includes);
 
         button_go.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("button", "go button was pressed");
                 string_item = edit_item.getText().toString();
                 string_City = spinner_City.getSelectedItem().toString();
+                title_Checked = check_Title.isChecked();
 
                 if(TextUtils.isEmpty(string_item)){
                     Toast.makeText(MainActivity.this, "You must enter an item to search.", Toast.LENGTH_SHORT).show();
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(MainActivity.this, SecondActivity.class);
                     i.putExtra("item_search", string_item);
                     i.putExtra("item_city", string_City);
+                    i.putExtra("box_checked", title_Checked);
                     startActivity(i);
                 }
             }

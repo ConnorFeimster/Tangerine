@@ -29,16 +29,6 @@
         android:textColor="@color/colorAccent"
         android:text="@string/Avg_Price" />
 
-    <CheckBox
-        android:id="@+id/checkBox_Includes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/checkBox_Include" />
-
     <TextView
         android:id="@+id/textView_avgPrice"
         android:layout_width="wrap_content"
@@ -51,7 +41,33 @@
         android:textColor="@color/colorAccent"
         android:text="@string/Empty" />
 
-    <ListView android:id="@android:id/list"
+    <TextView
+        android:id="@+id/textView_numOfItems_Static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Item"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/textView_avgPrice_Static"
+        android:layout_marginStart="170dp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/results"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/textView_numItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Item"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/textView_numOfItems_Static"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/Empty"
+        />
+
+    <ListView
+        android:id="@+id/listView_S2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/textView_avgPrice_Static"

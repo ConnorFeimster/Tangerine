@@ -32,7 +32,7 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
         String itemTitle;
         String itemURL;
         String itemDesc;
-        int itemPrice;
+        String itemPrice;
         boolean itemHide;
         String itemImage;
 
@@ -89,18 +89,26 @@ public class CraigsListTask extends AsyncTask<String, Void, ArrayList<Craigslist
                     imageElement = (Element) imageList.item(0);
                     itemImage = imageElement.getAttribute("resource");
 
-                    split = title.split(money);
-                    itemTitle = split[0];
-                    itemPrice = Integer.parseInt(split[1]);
+                    if (title.contains(money))
+                    {
+                        split = title.split(money);
+                        itemTitle = split[0];
+                        itemPrice = split[1];
+                    }
+                    else
+                    {
+                        itemTitle = title;
+                        itemPrice = String.valueOf(0);
+                    }
 
-//                    Log.d("i", "title : " + itemTitle);
-//                    Log.d("i", "url : " + itemURL);
-//                    Log.d("i", "desc : " + itemDesc);
-//                    Log.d("i", "price : " + itemPrice);
-//                    Log.d("i", "image : " + itemImage);
+                    Log.d("i" + i, "title : " + itemTitle);
+                    Log.d("i" + i, "url : " + itemURL);
+                    Log.d("i" + i, "desc : " + itemDesc);
+                    Log.d("i" + i, "price : " + itemPrice);
+                    Log.d("i" + i, "image : " + itemImage);
 
                     itemHide = (!title.toLowerCase().contains(searchTerm.toLowerCase()));
-//                    Log.d("i", "hide : " + String.valueOf(itemHide));
+                    Log.d("i" + i, "hide : " + String.valueOf(itemHide));
                     CraigslistItem cl = new CraigslistItem(itemTitle, itemURL, itemPrice, itemDesc, itemImage, itemHide);
                     result.add(cl);
                 }
