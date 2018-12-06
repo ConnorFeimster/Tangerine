@@ -1,14 +1,16 @@
 package com.example.cfeim.tangerine;
 
 import android.graphics.Bitmap;
+import android.os.Parcelable;
 
-public class CraigslistItem {
+import java.io.Serializable;
+
+public class CraigslistItem implements Serializable {
 
     private String Url;
     private String Title;
     private String Price;
     private String Desc;
-    private boolean Hide;
     private String Thumbnail;
 
     public String getUrl() {
@@ -43,14 +45,6 @@ public class CraigslistItem {
         Desc = desc;
     }
 
-    public void setHide(boolean hide){
-        Hide = hide;
-    }
-
-    public boolean getHide(){
-        return Hide;
-    }
-
     public void setThumbnail(String image){
         Thumbnail = image;
     }
@@ -64,16 +58,14 @@ public class CraigslistItem {
         Title = "";
         Price = "";
         Desc = "";
-        Hide = false;
     }
 
-    public CraigslistItem(String TITLE, String URL, String PRICE, String DESC, String THUMB, boolean HIDE){
+    public CraigslistItem(String TITLE, String URL, String PRICE, String DESC, String THUMB){
         Title = TITLE;
         Url = URL;
         Price = PRICE;
         Desc = DESC;
         Thumbnail = THUMB;
-        Hide = HIDE;
     }
 
 }
