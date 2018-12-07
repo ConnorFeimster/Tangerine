@@ -6,4 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
+    <TextView
+        android:id="@+id/textView_Item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/Empty" />
+
+    <TextView
+        android:id="@+id/textView_avgPrice_Static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Item"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/Avg_Price" />
+
+    <TextView
+        android:id="@+id/textView_avgPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Item"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/textView_avgPrice_Static"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/Empty" />
+
+    <TextView
+        android:id="@+id/textView_numOfItems_Static"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Item"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/textView_avgPrice_Static"
+        android:layout_marginStart="170dp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/results"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/textView_numItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_Item"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@id/textView_numOfItems_Static"
+        android:layout_marginStart="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/Empty"
+        />
+
+    <ListView
+        android:id="@+id/listView_S2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textView_avgPrice_Static"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+
 </RelativeLayout>

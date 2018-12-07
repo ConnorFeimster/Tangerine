@@ -2,12 +2,26 @@
     <string name="app_name">Tangerine</string>
     <string name="title">Tangerine</string>
     <string name="radius">Radius :</string>
+    <string name="city">City :</string>
+    <string name="Empty" />
+    <string name="Item_Hint">Enter the item you want to search for here</string>
+    <string name="Button_Go">GO!</string>
+    <string name="Avg_Price">Avg Price :</string>
+    <string name="checkBox_Include">Title Only</string>
+    <string name="results">Results :</string>
 
-    <string-array name="radius">
-        <item>10</item>
-        <item>25</item>
-        <item>50</item>
-        <item>75</item>
-        <item>100</item>
+    <string-array name="ncCities">
+        <item>Asheville</item>
+        <item>Boone</item>
+        <item>Charlotte</item>
+        <item>East NC</item>
+        <item>Fayetteville</item>
+        <item>Greensboro</item>
+        <item>Hickory</item>
+        <item>Onslow</item>
+        <item>Outer Banks</item>
+        <item>Raleigh</item>
+        <item>Wilmington</item>
+        <item>Winston Salem</item>
     </string-array>
 </resources>
