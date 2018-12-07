@@ -78,7 +78,7 @@ public class SecondActivity extends AppCompatActivity {
 
         if (item.contains(" "))
         {
-            item = item.replace(" ", "");
+            item = item.replace(" ", "%20");
         }
 
         try
